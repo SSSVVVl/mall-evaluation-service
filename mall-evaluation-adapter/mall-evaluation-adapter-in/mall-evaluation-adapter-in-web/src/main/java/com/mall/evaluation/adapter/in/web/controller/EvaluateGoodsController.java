@@ -5,7 +5,6 @@ import com.mall.evaluation.adapter.in.web.dto.QueryEvaluateGoodsRequest;
 import com.mall.evaluation.application.command.CreateEvaluateGoodsCommand;
 import com.mall.evaluation.application.command.QueryEvaluateGoodsCommand;
 import com.mall.evaluation.application.dto.EvaluateGoodsResponse;
-import com.mall.evaluation.application.port.in.EvaluateGoodsUseCase;
 import com.mall.evaluation.common.Result;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;

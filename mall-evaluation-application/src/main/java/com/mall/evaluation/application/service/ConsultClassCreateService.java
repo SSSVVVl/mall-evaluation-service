@@ -9,6 +9,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class ConsultClassCreateService implements ConsultClassCreateUseCase {
 
+    /**
+     *
+     * @param command 创建咨询分类命令
+     * @return
+     */
     @Override
     public ConsultClassResponse createConsultClass(CreateConsultClassCommand command) {
         return null;

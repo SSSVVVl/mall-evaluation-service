@@ -7,6 +7,11 @@ import org.springframework.stereotype.Service;
 // 单一职责
 @Service
 public class ConsultClassGetIdService implements ConsultClassGetIdUseCase {
+    /**
+     *
+     * @param classId 分类ID
+     * @return
+     */
     @Override
     public ConsultClassResponse getConsultClassById(Long classId) {
         return null;

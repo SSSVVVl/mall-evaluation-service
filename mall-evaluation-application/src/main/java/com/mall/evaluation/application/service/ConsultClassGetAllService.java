@@ -11,6 +11,10 @@ import java.util.List;
 @Service
 public class ConsultClassGetAllService implements ConsultClassGetAllUseCase {
 
+    /**
+     *
+     * @return
+     */
     @Override
     public List<ConsultClassResponse> getAllConsultClass() {
         return List.of();
