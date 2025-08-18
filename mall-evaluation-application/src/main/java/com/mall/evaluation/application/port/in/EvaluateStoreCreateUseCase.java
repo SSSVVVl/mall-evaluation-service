@@ -2,7 +2,10 @@ package com.mall.evaluation.application.port.in;
 
 import com.mall.evaluation.application.command.CreateEvaluateStoreCommand;
 import com.mall.evaluation.application.dto.EvaluateStoreResponse;
-
+/**
+ * 此用例是用来 创建商店评价的内容
+ * @author wanhui
+ */
 public interface EvaluateStoreCreateUseCase {
     /**
      * 创建店铺评价

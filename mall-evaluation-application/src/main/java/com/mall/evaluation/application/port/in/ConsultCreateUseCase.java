@@ -2,7 +2,10 @@ package com.mall.evaluation.application.port.in;
 
 import com.mall.evaluation.application.command.CreateConsultCommand;
 import com.mall.evaluation.application.dto.ConsultResponse;
-
+/**
+ * 此用例是用来 创建咨询内容
+ * @author wanhui
+ */
 public interface ConsultCreateUseCase {
     /**
      * 创建咨询
