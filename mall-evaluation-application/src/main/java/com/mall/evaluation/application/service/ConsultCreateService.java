@@ -5,9 +5,15 @@ import com.mall.evaluation.application.dto.ConsultResponse;
 import com.mall.evaluation.application.port.in.ConsultCreateUseCase;
 import org.springframework.stereotype.Service;
 
-// 单一职责
+// 单一职责原则
 @Service
 public class ConsultCreateService implements ConsultCreateUseCase {
+
+    /**
+     *
+     * @param command 创建咨询命令
+     * @return
+     */
     @Override
     public ConsultResponse createConsult(CreateConsultCommand command) {
         return null;

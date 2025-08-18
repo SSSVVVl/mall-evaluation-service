@@ -3,7 +3,6 @@ package com.mall.evaluation.application.service;
 import com.mall.evaluation.application.command.CreateConsultCommand;
 import com.mall.evaluation.application.command.QueryConsultCommand;
 import com.mall.evaluation.application.dto.ConsultResponse;
-import com.mall.evaluation.application.port.in.ConsultUseCase;
 import com.mall.evaluation.application.port.out.ConsultRepository;
 import com.mall.evaluation.common.exception.BusinessException;
 import com.mall.evaluation.common.enums.Resp;
@@ -22,7 +21,7 @@ import java.util.stream.Collectors;
 @Slf4j
 @Service
 @Transactional
-public class ConsultService implements ConsultUseCase {
+public class ConsultService {
 
     private final ConsultRepository consultRepository;
 

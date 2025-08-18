@@ -3,7 +3,6 @@ package com.mall.evaluation.application.service;
 import com.mall.evaluation.application.command.CreateEvaluateGoodsCommand;
 import com.mall.evaluation.application.command.QueryEvaluateGoodsCommand;
 import com.mall.evaluation.application.dto.EvaluateGoodsResponse;
-import com.mall.evaluation.application.port.in.EvaluateGoodsUseCase;
 import com.mall.evaluation.application.port.out.EvaluateGoodsRepository;
 import com.mall.evaluation.common.exception.BusinessException;
 import com.mall.evaluation.common.enums.Resp;
@@ -22,7 +21,7 @@ import java.util.stream.Collectors;
 @Slf4j
 @Service
 @Transactional
-public class EvaluateGoodsService implements EvaluateGoodsUseCase {
+public class EvaluateGoodsService {
 
     private final EvaluateGoodsRepository evaluateGoodsRepository;
 

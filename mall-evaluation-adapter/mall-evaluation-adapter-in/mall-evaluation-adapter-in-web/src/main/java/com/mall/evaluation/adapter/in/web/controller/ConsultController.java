@@ -6,7 +6,6 @@ import com.mall.evaluation.adapter.in.web.dto.ReplyConsultRequest;
 import com.mall.evaluation.application.command.CreateConsultCommand;
 import com.mall.evaluation.application.command.QueryConsultCommand;
 import com.mall.evaluation.application.dto.ConsultResponse;
-import com.mall.evaluation.application.port.in.ConsultUseCase;
 import com.mall.evaluation.common.Result;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
