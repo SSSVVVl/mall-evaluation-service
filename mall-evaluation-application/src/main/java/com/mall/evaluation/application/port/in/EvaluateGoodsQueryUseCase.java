@@ -4,7 +4,10 @@ import com.mall.evaluation.application.command.QueryEvaluateGoodsCommand;
 import com.mall.evaluation.application.dto.EvaluateGoodsResponse;
 
 import java.util.List;
-
+/**
+ * 此用例是用来 显示商品评价的内容列表
+ * @author wanhui
+ */
 public interface EvaluateGoodsQueryUseCase {
     /**
      * 查询商品评价列表

@@ -3,6 +3,10 @@ package com.mall.evaluation.application.port.in;
 import com.mall.evaluation.application.command.CreateConsultClassCommand;
 import com.mall.evaluation.application.dto.ConsultClassResponse;
 
+/**
+ * 此用例是用来 创建咨询大类
+ * @author wanhui
+ */
 public interface ConsultClassCreateUseCase {
     /**
      * 创建咨询分类
