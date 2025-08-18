@@ -3,7 +3,6 @@ package com.mall.evaluation.adapter.in.web.controller;
 import com.mall.evaluation.adapter.in.web.dto.CreateConsultClassRequest;
 import com.mall.evaluation.application.command.CreateConsultClassCommand;
 import com.mall.evaluation.application.dto.ConsultClassResponse;
-import com.mall.evaluation.application.port.in.ConsultClassUseCase;
 import com.mall.evaluation.common.Result;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;

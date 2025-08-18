@@ -11,13 +11,7 @@ import java.util.List;
  */
 public interface ConsultUseCase {
 
-    /**
-     * 创建咨询
-     *
-     * @param command 创建咨询命令
-     * @return 咨询响应
-     */
-    ConsultResponse createConsult(CreateConsultCommand command);
+
 
     /**
      * 查询咨询列表

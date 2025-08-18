@@ -2,7 +2,6 @@ package com.mall.evaluation.application.service;
 
 import com.mall.evaluation.application.command.CreateConsultClassCommand;
 import com.mall.evaluation.application.dto.ConsultClassResponse;
-import com.mall.evaluation.application.port.in.ConsultClassUseCase;
 import com.mall.evaluation.application.port.out.ConsultClassRepository;
 import com.mall.evaluation.common.exception.BusinessException;
 import com.mall.evaluation.common.enums.Resp;
@@ -21,7 +20,7 @@ import java.util.stream.Collectors;
 @Slf4j
 @Service
 @Transactional
-public class ConsultClassService implements ConsultClassUseCase {
+public class ConsultClassService {
 
     private final ConsultClassRepository consultClassRepository;
 
