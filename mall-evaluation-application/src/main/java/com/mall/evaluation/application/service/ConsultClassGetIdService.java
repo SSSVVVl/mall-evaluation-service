@@ -5,10 +5,6 @@ import com.mall.evaluation.application.port.in.ConsultClassGetIdUseCase;
 import org.springframework.stereotype.Service;
 
 // 单一职责
-/**
- * 咨询分类获取ID方法
- * @author wanhui
- */
 @Service
 public class ConsultClassGetIdService implements ConsultClassGetIdUseCase {
     /**

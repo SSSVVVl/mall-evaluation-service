@@ -5,10 +5,6 @@ import com.mall.evaluation.application.port.in.ConsultReplyUseCase;
 import org.springframework.stereotype.Service;
 
 // 单一职责原则
-/**
- * 咨询回复方法
- * @author wanhui
- */
 @Service
 public class ConsultReplyService implements ConsultReplyUseCase {
 

@@ -6,10 +6,6 @@ import com.mall.evaluation.application.port.in.ConsultClassCreateUseCase;
 import org.springframework.stereotype.Service;
 
 // 单一职责原则
-/**
- * 咨询分类创建方法
- * @author wanhui
- */
 @Service
 public class ConsultClassCreateService implements ConsultClassCreateUseCase {
 
