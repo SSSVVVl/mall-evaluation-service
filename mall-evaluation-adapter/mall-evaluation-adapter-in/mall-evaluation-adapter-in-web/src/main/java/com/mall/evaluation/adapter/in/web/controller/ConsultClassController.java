@@ -44,7 +44,7 @@ public class ConsultClassController {
 
         //todo 补CreateConsultClassCommand
         CreateConsultClassCommand command = new CreateConsultClassCommand(
-//                request.getClassName()+request.getClassDesc(),request.getSort(),request.getStatus()
+//                request.getClassName()request.getClassDesc(),request.getSort(),request.getStatus()
 //                request.getClassName(),
 //                request.getClassDesc(),
 //                request.getSort(),

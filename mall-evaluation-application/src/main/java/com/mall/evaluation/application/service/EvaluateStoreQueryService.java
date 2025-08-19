@@ -8,6 +8,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 // 单一职责原则
+/**
+ * 商店评价查询方法
+ * @author wanhui
+ */
 @Service
 public class EvaluateStoreQueryService implements EvaluateStoreQueryUseCase {
 

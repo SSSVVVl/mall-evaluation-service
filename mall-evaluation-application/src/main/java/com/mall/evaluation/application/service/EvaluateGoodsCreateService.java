@@ -6,6 +6,10 @@ import com.mall.evaluation.application.port.in.EvaluateGoodsCreateUseCase;
 import org.springframework.stereotype.Service;
 
 // 单一职责原则
+/**
+ * 商品评价创建方法
+ * @author wanhui
+ */
 @Service
 public class EvaluateGoodsCreateService implements EvaluateGoodsCreateUseCase {
 
