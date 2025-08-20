@@ -5,6 +5,9 @@ import com.mall.evaluation.adapter.in.web.dto.QueryEvaluateGoodsRequest;
 import com.mall.evaluation.application.command.CreateEvaluateGoodsCommand;
 import com.mall.evaluation.application.command.QueryEvaluateGoodsCommand;
 import com.mall.evaluation.application.dto.EvaluateGoodsResponse;
+import com.mall.evaluation.application.port.in.EvaluateGoodsCreateUseCase;
+import com.mall.evaluation.application.port.in.EvaluateGoodsGetIdUseCase;
+import com.mall.evaluation.application.port.in.EvaluateGoodsQueryUseCase;
 import com.mall.evaluation.common.Result;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -24,10 +27,14 @@ import java.util.List;
 @Tag(name = "商品评价管理", description = "商品评价相关接口")
 public class EvaluateGoodsController {
 
-    private final EvaluateGoodsUseCase evaluateGoodsUseCase;
+    private final EvaluateGoodsCreateUseCase evaluateGoodsCreateUseCase;
+    private final EvaluateGoodsQueryUseCase evaluateGoodsQueryUseCase;
+    private final EvaluateGoodsGetIdUseCase evaluateGoodsGetIdUseCase;
 
-    public EvaluateGoodsController(EvaluateGoodsUseCase evaluateGoodsUseCase) {
-        this.evaluateGoodsUseCase = evaluateGoodsUseCase;
+    public EvaluateGoodsController(EvaluateGoodsCreateUseCase evaluateGoodsCreateUseCase,EvaluateGoodsQueryUseCase evaluateGoodsQueryUseCase,EvaluateGoodsGetIdUseCase evaluateGoodsGetIdUseCase) {
+        this.evaluateGoodsCreateUseCase = evaluateGoodsCreateUseCase;
+        this.evaluateGoodsQueryUseCase = evaluateGoodsQueryUseCase;
+        this.evaluateGoodsGetIdUseCase = evaluateGoodsGetIdUseCase;
     }
 
     @PostMapping
@@ -49,7 +56,7 @@ public class EvaluateGoodsController {
                 request.getDescScore()
         );
 
-        EvaluateGoodsResponse response = evaluateGoodsUseCase.createEvaluateGoods(command);
+        EvaluateGoodsResponse response = evaluateGoodsCreateUseCase.createEvaluateGoods(command);
         return Result.success(response);
     }
 
@@ -67,7 +74,7 @@ public class EvaluateGoodsController {
                 request.getPageSize()
         );
 
-        List<EvaluateGoodsResponse> responses = evaluateGoodsUseCase.queryEvaluateGoods(command);
+        List<EvaluateGoodsResponse> responses = evaluateGoodsQueryUseCase.queryEvaluateGoods(command);
         return Result.success(responses);
     }
 
@@ -76,7 +83,7 @@ public class EvaluateGoodsController {
     public Result<EvaluateGoodsResponse> getEvaluateGoodsById(
             @Parameter(description = "评价ID") @PathVariable Long evaluateId) {
         
-        EvaluateGoodsResponse response = evaluateGoodsUseCase.getEvaluateGoodsById(evaluateId);
+        EvaluateGoodsResponse response = evaluateGoodsGetIdUseCase.getEvaluateGoodsById(evaluateId);
         return Result.success(response);
     }
 }

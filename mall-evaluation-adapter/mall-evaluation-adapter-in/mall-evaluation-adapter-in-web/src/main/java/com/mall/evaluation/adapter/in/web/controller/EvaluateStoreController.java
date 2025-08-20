@@ -5,6 +5,9 @@ import com.mall.evaluation.adapter.in.web.dto.QueryEvaluateStoreRequest;
 import com.mall.evaluation.application.command.CreateEvaluateStoreCommand;
 import com.mall.evaluation.application.command.QueryEvaluateStoreCommand;
 import com.mall.evaluation.application.dto.EvaluateStoreResponse;
+import com.mall.evaluation.application.port.in.EvaluateStoreCreateUseCase;
+import com.mall.evaluation.application.port.in.EvaluateStoreGetIdUseCase;
+import com.mall.evaluation.application.port.in.EvaluateStoreQueryUseCase;
 import com.mall.evaluation.common.Result;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -24,10 +27,14 @@ import java.util.List;
 @Tag(name = "店铺评价管理", description = "店铺评价相关接口")
 public class EvaluateStoreController {
 
-    private final EvaluateStoreUseCase evaluateStoreUseCase;
+    private final EvaluateStoreCreateUseCase evaluateStoreCreateUseCase;
+    private final EvaluateStoreQueryUseCase evaluateStoreQueryUseCase;
+    private final EvaluateStoreGetIdUseCase evaluateStoreGetIdUseCase;
 
-    public EvaluateStoreController(EvaluateStoreUseCase evaluateStoreUseCase) {
-        this.evaluateStoreUseCase = evaluateStoreUseCase;
+    public EvaluateStoreController(EvaluateStoreCreateUseCase evaluateStoreCreateUseCase,EvaluateStoreQueryUseCase evaluateStoreQueryUseCase,EvaluateStoreGetIdUseCase evaluateStoreGetIdUseCase) {
+        this.evaluateStoreCreateUseCase = evaluateStoreCreateUseCase;
+        this.evaluateStoreQueryUseCase = evaluateStoreQueryUseCase;
+        this.evaluateStoreGetIdUseCase = evaluateStoreGetIdUseCase;
     }
 
     @PostMapping
@@ -46,7 +53,7 @@ public class EvaluateStoreController {
                 request.getDescScore()
         );
 
-        EvaluateStoreResponse response = evaluateStoreUseCase.createEvaluateStore(command);
+        EvaluateStoreResponse response = evaluateStoreCreateUseCase.createEvaluateStore(command);
         return Result.success(response);
     }
 
@@ -63,7 +70,7 @@ public class EvaluateStoreController {
                 request.getPageSize()
         );
 
-        List<EvaluateStoreResponse> responses = evaluateStoreUseCase.queryEvaluateStore(command);
+        List<EvaluateStoreResponse> responses = evaluateStoreQueryUseCase.queryEvaluateStore(command);
         return Result.success(responses);
     }
 
@@ -72,7 +79,7 @@ public class EvaluateStoreController {
     public Result<EvaluateStoreResponse> getEvaluateStoreById(
             @Parameter(description = "评价ID") @PathVariable Long evaluateId) {
         
-        EvaluateStoreResponse response = evaluateStoreUseCase.getEvaluateStoreById(evaluateId);
+        EvaluateStoreResponse response = evaluateStoreGetIdUseCase.getEvaluateStoreById(evaluateId);
         return Result.success(response);
     }
 }

@@ -6,6 +6,10 @@ import com.mall.evaluation.adapter.in.web.dto.ReplyConsultRequest;
 import com.mall.evaluation.application.command.CreateConsultCommand;
 import com.mall.evaluation.application.command.QueryConsultCommand;
 import com.mall.evaluation.application.dto.ConsultResponse;
+import com.mall.evaluation.application.port.in.ConsultCreateUseCase;
+import com.mall.evaluation.application.port.in.ConsultGetIdUseCase;
+import com.mall.evaluation.application.port.in.ConsultQueryUseCase;
+import com.mall.evaluation.application.port.in.ConsultReplyUseCase;
 import com.mall.evaluation.common.Result;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -25,10 +29,16 @@ import java.util.List;
 @Tag(name = "咨询管理", description = "商品咨询相关接口")
 public class ConsultController {
 
-    private final ConsultUseCase consultUseCase;
+    private final ConsultCreateUseCase consultCreateUseCase;
+    private final ConsultQueryUseCase consultQueryUseCase;
+    private final ConsultGetIdUseCase consultGetIdUseCase;
+    private final ConsultReplyUseCase consultReplyUseCase;
 
-    public ConsultController(ConsultUseCase consultUseCase) {
-        this.consultUseCase = consultUseCase;
+    public ConsultController(ConsultCreateUseCase consultCreateUseCase,ConsultQueryUseCase consultQueryUseCase,ConsultGetIdUseCase consultGetIdUseCase,ConsultReplyUseCase consultReplyUseCase) {
+        this.consultCreateUseCase = consultCreateUseCase;
+        this.consultQueryUseCase = consultQueryUseCase;
+        this.consultGetIdUseCase = consultGetIdUseCase;
+        this.consultReplyUseCase = consultReplyUseCase;
     }
 
     @PostMapping
@@ -44,7 +54,7 @@ public class ConsultController {
                 request.getIsAnonymous()
         );
 
-        ConsultResponse response = consultUseCase.createConsult(command);
+        ConsultResponse response = consultCreateUseCase.createConsult(command);
         return Result.success(response);
     }
 
@@ -61,7 +71,7 @@ public class ConsultController {
                 request.getPageSize()
         );
 
-        List<ConsultResponse> responses = consultUseCase.queryConsult(command);
+        List<ConsultResponse> responses = consultQueryUseCase.queryConsult(command);
         return Result.success(responses);
     }
 
@@ -70,7 +80,7 @@ public class ConsultController {
     public Result<ConsultResponse> getConsultById(
             @Parameter(description = "咨询ID") @PathVariable Long consultId) {
         
-        ConsultResponse response = consultUseCase.getConsultById(consultId);
+        ConsultResponse response = consultGetIdUseCase.getConsultById(consultId);
         return Result.success(response);
     }
 
@@ -80,7 +90,7 @@ public class ConsultController {
             @Parameter(description = "咨询ID") @PathVariable Long consultId,
             @Validated @RequestBody ReplyConsultRequest request) {
         
-        ConsultResponse response = consultUseCase.replyConsult(consultId, request.getReplyContent());
+        ConsultResponse response = consultReplyUseCase.replyConsult(consultId, request.getReplyContent());
         return Result.success(response);
     }
 }
