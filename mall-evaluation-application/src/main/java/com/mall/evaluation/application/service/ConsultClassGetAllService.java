@@ -8,6 +8,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 // 单一职责
+/**
+ * 咨询分类获取所有ID
+ * @author wanhui
+ */
 @Service
 public class ConsultClassGetAllService implements ConsultClassGetAllUseCase {
 

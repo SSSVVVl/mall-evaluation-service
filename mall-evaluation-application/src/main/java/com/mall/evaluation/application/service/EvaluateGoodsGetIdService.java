@@ -5,6 +5,10 @@ import com.mall.evaluation.application.port.in.EvaluateGoodsGetIdUseCase;
 import org.springframework.stereotype.Service;
 
 // 单一职责原则
+/**
+ * 商品评价ID
+ * @author wanhui
+ */
 @Service
 public class EvaluateGoodsGetIdService implements EvaluateGoodsGetIdUseCase {
 
