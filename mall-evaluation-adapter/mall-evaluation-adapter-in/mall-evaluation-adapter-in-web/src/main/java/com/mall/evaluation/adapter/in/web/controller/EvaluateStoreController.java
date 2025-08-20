@@ -20,6 +20,7 @@ import java.util.List;
 
 /**
  * 店铺评价控制器
+ * @author wanhui
  */
 @Slf4j
 @RestController
